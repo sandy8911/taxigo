@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>TaxiGo!</title>
+</head>
+<body>
+	<h1>Hola Soy TaxiGO!</h1>
+	<h2>Choferes disponibles</h2>
+	<ul>
+		{% for chofer in choferes %}
+		<li>{{chofer.nombre}}</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
