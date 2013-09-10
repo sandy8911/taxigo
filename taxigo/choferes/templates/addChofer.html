@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<title>Agregar Chofer | TaxiGo!</title>
+</head>
+<body>
+	<h1>Hola Soy TaxiGO!</h1>
+	<form name = "addChofer" method = "post">
+		<div id = "addChofer">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type = "submit" value = "Agregar Vehiculo"> 
+		</div>
+	</form>
+</body>
+</html>

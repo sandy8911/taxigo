@@ -1,5 +1,6 @@
 #encoding:utf-8
 from django.db import models
+from django.contrib.auth.models import User
 
 class vehiculos(models.Model):
 	"""Datos generales de los vehiculos"""
@@ -8,6 +9,7 @@ class vehiculos(models.Model):
 	placa = models.CharField(max_length = 50, verbose_name = 'Placa')
 	numero = models.IntegerField(default = 0, verbose_name = 'Numero de vehiculo')
 	adicionales = models.TextField(verbose_name = 'Caracteristicas',help_text = 'Color del carro, rodado de llantas, golpes, etc..')
+	usuario = models.ForeignKey(User)
 	class Meta:
 		verbose_name = u'Control de Vehiculo'
 		verbose_name_plural = u'Control de Vehiculos'
@@ -33,6 +35,7 @@ class choferes(models.Model):
 	vehiculoAsig = models.ForeignKey(vehiculos,verbose_name = 'Vehiculo asignado')
 	diasTrabaja = models.CharField(max_length = 7, choices = DIAS_CHOICES, verbose_name = 'Dias de trabajo')
 	activo = models.BooleanField(default = True, verbose_name = 'Activo')
+	usuario = models.ForeignKey(User)
 	class Meta:
 		verbose_name = u'Control de chofer'
 		verbose_name_plural = u'Control de choferes'
